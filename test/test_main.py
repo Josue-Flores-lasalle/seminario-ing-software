@@ -18,8 +18,6 @@ def test_create_task():
 
 def test_get_task():
     task_id = 1
-    task = {"id": 1, "title": "Participar Seminario", "description": "prueba", "completed": False}
-    client.post("/tasks", json=task)
-    response = client.get(f"/task/{task_id}")
+    response = client.get(f"/tasks/{task_id}")
     assert response.status_code == 200
     assert response.json()["id"] == task_id

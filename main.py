@@ -29,5 +29,5 @@ def create_task(task: Task):
 def get_task(task_id: int):
     for item in tasks:
         if item.id == task_id:
-            return tasks
+            return item
     raise HTTPException(status_code=404, detail="Tarea no encontrada")
